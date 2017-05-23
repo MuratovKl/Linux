@@ -2,6 +2,7 @@ apt-get update
 apt-get -y install apache2
 apt-get -y install nginx
 apt-get -y install sysstat
+apt-get install libapache2-mod-php7.0
 a2enmod php7.0
 cp index.php /var/www/html/index.php
 chmod 755 /var/www/html/index.php
