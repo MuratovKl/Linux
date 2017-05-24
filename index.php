@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>sysi</title>
+	<title>sysinfo</title>
 </head>
 <body>
 <?php echo "NGINX_ADDR: " . $_SERVER['REMOTE_ADDR'] . "<br>"; 
