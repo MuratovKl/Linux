@@ -22,8 +22,19 @@
 </tr>
 <tr>
 <?php $ans =preg_split("/[^0-9\.\,]+/",shell_exec("cat /proc/loadavg | awk '{print $1, $2, $3}'")); 
-for ($i=0; $i < 3; $i++) { 
-	echo "<td align='center'>$ans[$i]</td>";
+$ncpu = shell_exec("lscpu | grep ^CPU\(s\) | awk '{print $2}'");
+$warn = $ncpu * 0.80;
+$crit = $ncpu * 0.90;
+for ($i=0; $i < 3; $i++) {
+        if($ans[$i] >= $crit ){
+        echo "<td align='center'>$ans[$i]</td>";
+        }
+        elseif($ans[$i] >= $warn and $ans[$i] < $crit) {
+        echo "<td align='center'>$ans[$i]</td>";
+        }
+        else {
+        echo "<td align='center'>$ans[$i]</td>";
+        }
 }
 ?>
 </tr>
