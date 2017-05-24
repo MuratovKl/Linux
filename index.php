@@ -27,13 +27,13 @@ $warn = $ncpu * 0.80;
 $crit = $ncpu * 0.90;
 for ($i=0; $i < 3; $i++) {
         if($ans[$i] >= $crit ){
-        echo "<td align='center'>$ans[$i]</td>";
+        echo "<td align='center'><span style='color: red;'>$ans[$i]</span></td>";
         }
         elseif($ans[$i] >= $warn and $ans[$i] < $crit) {
-        echo "<td align='center'>$ans[$i]</td>";
+        echo "<td align='center'><span style='color: yellow;'>$ans[$i]</span></td>";
         }
         else {
-        echo "<td align='center'>$ans[$i]</td>";
+                echo "<td align='center'><span style='color: blue;'>$ans[$i]</span></td>";
         }
 }
 ?>
